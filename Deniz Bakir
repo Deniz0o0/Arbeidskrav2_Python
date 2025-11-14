@@ -1,0 +1,184 @@
+alder = int(input('Hvilket år er du født? ') )
+alder_2024 = 2024 - alder
+print(f'Du blir {alder_2024} år i løpet av år 2024.')
+Hvilket år er du født? 1985
+Du blir 39 år i løpet av år 2024.
+
+opp2:
+
+import math
+
+antall_elever = int(input('Skriv inn antall elever: '))
+pizzaper_elev = 1/4
+total_pizza = antall_elever * pizzaper_elev
+# Rund opp til nærmeste hele pizza (du kan ikke kjøpe desimaler)
+antall_pizza = math.ceil(total_pizza)
+print(f'Det må handles inn {antall_pizza} pizzaer til festen.')
+
+Skriv inn antall elever: 105
+Det må handles inn 27 pizzaer til festen.
+
+
+opp3:
+import numpy as np
+
+v_grad = float(input('Skriv inn gradtallet (f.eks. 30, 45, 90, eller 3.14159): '))
+v_rad = v_grad * np.pi / 180
+print(f'{v_grad} grader = {v_rad} radianer')
+
+Skriv inn gradtallet (f.eks. 30, 45, 90, eller 3.14159): 3.14149
+3.14149 grader = 0.054829343918476665 radianer
+
+
+opp4.
+# a) Opprett en dictionary som gitt.
+data = {
+    "Norge": ["Oslo", 0.634],
+    "England": ["London", 8.982],
+    "Frankrike": ["Paris", 2.161],
+    "Italia": ["Roma", 2.873]
+}
+ 
+# b)
+ land = input("Skriv inn et land fra listen (Norge, England, Frankrike, Italia): ")
+ 
+if land in data:
+    hovedstad = data[land][0]
+    innbyggere = data[land][1]
+    print(f'{hovedstad} er hovedstaden i {land} og det er {innbyggere} mill. innbyggere i {hovedstad}')
+else:
+    print(f'Landet "{land}" ble ikke funnet i databasen.')
+ 
+# c) 
+# Dictionaryen data skrives så til skjerm.
+ 
+nytt_land = input("\nSkriv inn navnet på et nytt land: ")
+ny_hovedstad = input(f"Skriv inn hovedstaden i {nytt_land}: ")
+ny_innbyggere = float(input(f"Skriv inn antall innbyggere i {ny_hovedstad} (i millioner, f.eks. 5.5): "))
+ 
+# Oppdaterer/utvider dictionaryen
+data[nytt_land] = [ny_hovedstad, ny_innbyggere]
+ 
+# Skriver ut den oppdaterte dictionaryen
+print("\nOppdatert dictionary:")
+print(data)
+
+opp5.
+
+iimport math
+ 
+def beregn_figur(a, b):
+    """
+    Beregner arealet og den ytre omkretsen av en figur bestående av en
+    rettvinklet trekant og en halvsirkel.
+    a: høyden av trekanten/diameteren av halvsirkelen
+    b: den ene kateten i trekanten
+    """
+    # 1. Areal
+    # Trekantens areal: A_trekant = (b * a) / 2
+    A_trekant = (b * a) / 2
+ 
+    # Halvsirkelens areal: A_halvsirkel = (pi * r^2) / 2. Radius r = a / 2.
+    r = a / 2
+    A_halvsirkel = (math.pi * r**2) / 2
+ 
+    # Totalt areal
+    A_totalt = A_trekant + A_halvsirkel
+ 
+    # 2. Ytre Omkrets
+    # Hypotenus (c) i trekanten: c = sqrt(a^2 + b^2)
+    c = math.sqrt(a**2 + b**2)
+ 
+    # Halvsirkelens bue: O_halvsirkel = (pi * d) / 2. Diameter d = a.
+    O_halvsirkel = (math.pi * a) / 2
+ 
+    # Total ytre omkrets: O_ytre = c + b + O_halvsirkel
+    O_ytre = c + b + O_halvsirkel
+ 
+    return A_totalt, O_ytre
+ 
+# Eksempel på bruk av funksjonen (med a=3.0 og b=4.0)
+a_verdi = 3.0
+b_verdi = 4.0
+ 
+areal, omkrets = beregn_figur(a_verdi, b_verdi)
+ 
+# Skriver ut resultatet
+print(f'For a = {a_verdi} og b = {b_verdi}:')
+print(f'Arealet av figuren er: {areal:.2f}')
+print(f'Den ytre omkretsen av figuren er: {omkrets:.2f}')
+mport math
+ 
+def beregn_figur(a, b):
+    """
+    Beregner arealet og den ytre omkretsen av en figur bestående av en
+    rettvinklet trekant og en halvsirkel.
+    a: høyden av trekanten/diameteren av halvsirkelen
+    b: den ene kateten i trekanten
+    """
+    # 1. Areal
+    # Trekantens areal: A_trekant = (b * a) / 2
+    A_trekant = (b * a) / 2
+ 
+    # Halvsirkelens areal: A_halvsirkel = (pi * r^2) / 2. Radius r = a / 2.
+    r = a / 2
+    A_halvsirkel = (math.pi * r**2) / 2
+ 
+    # Totalt areal
+    A_totalt = A_trekant + A_halvsirkel
+ 
+    # 2. Ytre Omkrets
+    # Hypotenus (c) i trekanten: c = sqrt(a^2 + b^2)
+    c = math.sqrt(a**2 + b**2)
+ 
+    # Halvsirkelens bue: O_halvsirkel = (pi * d) / 2. Diameter d = a.
+    O_halvsirkel = (math.pi * a) / 2
+ 
+    # Total ytre omkrets: O_ytre = c + b + O_halvsirkel
+    O_ytre = c + b + O_halvsirkel
+ 
+    return A_totalt, O_ytre
+ 
+# Eksempel på bruk av funksjonen (med a=3.0 og b=4.0)
+a_verdi = 3.0
+b_verdi = 4.0
+ 
+areal, omkrets = beregn_figur(a_verdi, b_verdi)
+ 
+# Skriver ut resultatet
+print(f'For a = {a_verdi} og b = {b_verdi}:')
+print(f'Arealet av figuren er: {areal:.2f}')
+print(f'Den ytre omkretsen av figuren er: {omkrets:.2f}')
+
+
+opp6. 
+Oppgave 6: Plotting av funksjon
+# Skriv en kode som plotter funksjonen f(x) = -x^2 - 5, for x på intervallet [-10, 10].
+ 
+import numpy as np
+import matplotlib.pyplot as plt
+ 
+# Genererer 200 punkter jevnt fordelt på intervallet [-10, 10]
+x = np.linspace(-10, 10, 200)
+ 
+# Definer funksjonen f(x) = -x^2 - 5
+y = -x**2 - 5
+ 
+# Plotting
+plt.figure(figsize=(8, 6))
+plt.plot(x, y, label=r'$f(x) = -x^2 - 5$', color='red')
+ 
+# Legger til tittel og akse-etiketter
+plt.title('Plot av funksjonen $f(x) = -x^2 - 5$')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+ 
+# Legger til rutenett og forklaring
+plt.grid(True)
+plt.legend()
+ 
+# Lagrer plottet som en fil
+plt.savefig('oppgave_6_plot.png')
+
+
+
